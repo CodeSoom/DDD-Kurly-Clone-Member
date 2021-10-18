@@ -1,0 +1,14 @@
+// 회원생성
+{
+	"userId" : "test1",
+	"password" : "pwd1",
+	"userEmail" : "mail@mail",
+	"userName" : "name1",
+	"userPhoneNumber" : "010",
+	"roadName" : "road1",
+	"detailedAddress" : "address1",
+	"gender" : "gender1",
+	"birth" : "birth1",
+	"addtionalData" : "additaional1"
+}
+
