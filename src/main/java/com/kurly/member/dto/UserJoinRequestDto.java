@@ -12,7 +12,7 @@ import javax.validation.constraints.NotEmpty;
  */
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class UserJoinDto {
+public class UserJoinRequestDto {
 
     @NotEmpty(message = "아이디는 필수 입력 항목입니다.")
     private String userId;
@@ -34,9 +34,9 @@ public class UserJoinDto {
     private String additionalData;
 
     @Builder
-    public UserJoinDto(String userId, String password, String userEmail,
-                       String userName, String userPhoneNumber, String roadName,
-                       String detailedAddress, String gender, String birth, String additionalData) {
+    public UserJoinRequestDto(String userId, String password, String userEmail,
+                              String userName, String userPhoneNumber, String roadName,
+                              String detailedAddress, String gender, String birth, String additionalData) {
         this.userId = userId;
         this.password = password;
         this.userEmail = userEmail;

@@ -1,6 +1,6 @@
 package com.kurly.member.service;
 
-import com.kurly.member.dto.UserJoinDto;
+import com.kurly.member.dto.UserJoinRequestDto;
 import com.kurly.member.dto.UserJoinResponseDto;
 
 /**
@@ -13,6 +13,6 @@ public interface UserService {
      * @param form 사용자 정보
      * @return 응답 전용 도메인
      */
-    UserJoinResponseDto createUser(UserJoinDto form);
+    UserJoinResponseDto createUser(UserJoinRequestDto form);
 
 }

@@ -1,6 +1,6 @@
 package com.kurly.member.controller;
 
-import com.kurly.member.dto.UserJoinDto;
+import com.kurly.member.dto.UserJoinRequestDto;
 import com.kurly.member.dto.UserJoinResponseDto;
 import com.kurly.member.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -26,7 +26,7 @@ public class UserController {
      */
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public UserJoinResponseDto createUser(@RequestBody @Valid UserJoinDto form) {
+    public UserJoinResponseDto createUser(@RequestBody @Valid UserJoinRequestDto form) {
 
         UserJoinResponseDto responseUser = userService.createUser(form);
         return responseUser;
