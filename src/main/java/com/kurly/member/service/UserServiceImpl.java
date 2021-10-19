@@ -2,7 +2,7 @@ package com.kurly.member.service;
 
 import com.kurly.member.domain.Address;
 import com.kurly.member.domain.User;
-import com.kurly.member.dto.UserJoinDto;
+import com.kurly.member.dto.UserJoinRequestDto;
 import com.kurly.member.dto.UserJoinResponseDto;
 import com.kurly.member.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +17,7 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
 
     @Override
-    public UserJoinResponseDto createUser(UserJoinDto form) {
+    public UserJoinResponseDto createUser(UserJoinRequestDto form) {
 
         User user = User.builder()
                 .userId(form.getUserId())
