@@ -19,7 +19,6 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private PasswordEncoder passwordEncoder;
 
-
     @Override
     public UserJoinResponseDto createUser(UserJoinRequestDto form) {
 
@@ -38,6 +37,16 @@ public class UserServiceImpl implements UserService {
         User createUser = userRepository.save(user);
         return new UserJoinResponseDto(createUser.getUserEmail(), createUser.getUserName());
 
+    }
+
+    @Override
+    public boolean joinIdCheck(String userId) {
+        return userRepository.existsByUserId(userId);
+    }
+
+    @Override
+    public boolean joinEmailCheck(String userEmail) {
+        return userRepository.existsByUserEmail(userEmail);
     }
 
 }
