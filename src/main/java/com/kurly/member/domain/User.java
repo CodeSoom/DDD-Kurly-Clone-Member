@@ -4,6 +4,8 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -48,6 +50,12 @@ public class User extends BaseEntity {
         this.gender = gender;
         this.birth = birth;
         this.additionalData = additionalData;
+    }
+
+    public User createPassword(String password, PasswordEncoder passwordEncoder) {
+        passwordEncoder = new BCryptPasswordEncoder();
+        this.password = passwordEncoder.encode(password);
+        return this;
     }
 
 }

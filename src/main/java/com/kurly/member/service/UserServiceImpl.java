@@ -6,6 +6,8 @@ import com.kurly.member.dto.UserJoinRequestDto;
 import com.kurly.member.dto.UserJoinResponseDto;
 import com.kurly.member.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,13 +17,14 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
+    private PasswordEncoder passwordEncoder;
+
 
     @Override
     public UserJoinResponseDto createUser(UserJoinRequestDto form) {
 
         User user = User.builder()
                 .userId(form.getUserId())
-                .password(form.getPassword())
                 .userEmail(form.getUserEmail())
                 .userName(form.getUserName())
                 .userPhoneNumber(form.getUserPhoneNumber())
@@ -30,6 +33,7 @@ public class UserServiceImpl implements UserService {
                 .gender(form.getGender())
                 .additionalData(form.getAdditionalData())
                 .build();
+        user.createPassword(form.getPassword(), passwordEncoder);
 
         User createUser = userRepository.save(user);
         return new UserJoinResponseDto(createUser.getUserEmail(), createUser.getUserName());
