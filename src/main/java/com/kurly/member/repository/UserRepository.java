@@ -18,4 +18,18 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @Override
     User save(User form);
 
+    /**
+     * 저장소에 사용자 아이디가 존재하는지 확인합니다.
+     * @param userId 조회할 아이디
+     * @return 존재할 경우 > true | 존재하지 않을경우 > false
+     */
+    boolean existsByUserId(String userId);
+
+    /**
+     * 저장소에 사용자 이메일이 존재하는지 확인합니다.
+     * @param userEmail 조회할 이메일
+     * @return 존재할 경우 > true | 존재하지 않을경우 > false
+     */
+    boolean existsByUserEmail(String userEmail);
+
 }

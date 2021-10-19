@@ -15,4 +15,18 @@ public interface UserService {
      */
     UserJoinResponseDto createUser(UserJoinRequestDto form);
 
+    /**
+     * 아이디 중복을 체크합니다.
+     * @param userId 중복을 검증할 아이디
+     * @return 중복일 경우 > true | 중복이 아닐경우 false
+     */
+    boolean joinIdCheck(String userId);
+
+    /**
+     * 이메일 중복을 체크합니다.
+     * @param userEmail 중복을 검증할 이메일
+     * @return 중복일 경우 > true | 중복이 아닐경우 false
+     */
+    boolean joinEmailCheck(String userEmail);
+
 }
