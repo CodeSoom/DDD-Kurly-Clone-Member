@@ -30,7 +30,6 @@ public class UserServiceImpl implements UserService {
                 .address(new Address(form.getRoadName(), form.getDetailedAddress()))
                 .birth(form.getBirth())
                 .gender(form.getGender())
-                .additionalData(form.getAdditionalData())
                 .build();
         user.createPassword(form.getPassword(), passwordEncoder);
 

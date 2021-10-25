@@ -1,4 +1,4 @@
-package com.kurly.member.domain;
+package com.kurly.member.common;
 
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;
@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @Getter
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-public abstract class BaseEntity {
+public abstract class BaseTime {
 
     @CreatedDate
     private LocalDateTime createTime;

@@ -31,12 +31,11 @@ public class UserJoinRequestDto {
 
     private String gender;
     private String birth;
-    private String additionalData;
 
     @Builder
     public UserJoinRequestDto(String userId, String password, String userEmail,
                               String userName, String userPhoneNumber, String roadName,
-                              String detailedAddress, String gender, String birth, String additionalData) {
+                              String detailedAddress, String gender, String birth) {
         this.userId = userId;
         this.password = password;
         this.userEmail = userEmail;
@@ -46,7 +45,6 @@ public class UserJoinRequestDto {
         this.detailedAddress = detailedAddress;
         this.gender = gender;
         this.birth = birth;
-        this.additionalData = additionalData;
     }
 
 }

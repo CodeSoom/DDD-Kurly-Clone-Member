@@ -1,5 +1,6 @@
 package com.kurly.member.domain;
 
+import com.kurly.member.common.BaseTime;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -18,7 +19,7 @@ import javax.persistence.Id;
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class User extends BaseEntity {
+public class User extends BaseTime {
 
     @Id
     @GeneratedValue
@@ -35,12 +36,11 @@ public class User extends BaseEntity {
 
     private String gender;
     private String birth;
-    private String additionalData;
 
     @Builder
     public User(String userId, String password, String userEmail, String userName,
                 String userPhoneNumber, Address address, String gender,
-                String birth, String additionalData) {
+                String birth) {
         this.userId = userId;
         this.password = password;
         this.userEmail = userEmail;
@@ -49,7 +49,6 @@ public class User extends BaseEntity {
         this.address = address;
         this.gender = gender;
         this.birth = birth;
-        this.additionalData = additionalData;
     }
 
     public User createPassword(String password, PasswordEncoder passwordEncoder) {
