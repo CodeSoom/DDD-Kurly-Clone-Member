@@ -3,7 +3,7 @@ name: ddd-kurly-clone-member
 on:
   push:
     branches:
-      - master
+      - main
   workflow_dispatch: # (2) 수동 실행
 
 env: # 새로 추가한 부분
