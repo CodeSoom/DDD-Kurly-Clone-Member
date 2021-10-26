@@ -7,9 +7,8 @@ on:
   workflow_dispatch: # (2) 수동 실행
 
 env: # 새로 추가한 부분
-  S3_BUCKET_NAME: logging-system-deploy2
+  S3_BUCKET_NAME: ddd-kurly-clone-member
   PROJECT_NAME: ddd-kurly-clone-member
-
 
 jobs:
   build:
